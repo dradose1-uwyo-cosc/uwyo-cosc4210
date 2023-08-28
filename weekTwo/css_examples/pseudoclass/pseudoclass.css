@@ -1,0 +1,19 @@
+body {
+    background-color:#ffc425 ;
+    width: 800px;
+    margin: auto;
+}
+h1{
+    color: #492f24;
+    text-align: center;
+    
+}
+a{
+    color:cornflowerblue;
+}
+a:visited{
+    color: tomato;
+}
+a:hover{
+    text-decoration: underline;
+}

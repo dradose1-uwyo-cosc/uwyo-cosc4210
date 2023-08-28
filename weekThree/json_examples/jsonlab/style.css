@@ -1,0 +1,25 @@
+body {
+    background-color:#ffc425 ;
+    width: 800px;
+    margin: auto;
+}
+h1{
+    color: #492f24;
+    text-align: center;
+    
+}
+p {
+    color:gray;
+    border: 1px solid gray;
+    padding: 10px;
+}
+.my-display p:nth-child(even){
+    background-color: rgb(139, 139, 236);
+}
+.my-display p:nth-child(odd){
+    background-color: gainsboro;
+}
+
+.my-input span:hover{
+    cursor: pointer;
+}

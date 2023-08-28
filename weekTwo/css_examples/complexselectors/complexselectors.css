@@ -1,0 +1,44 @@
+body {
+    background-color:#ffc425 ;
+    width: 800px;
+    margin: auto;
+}
+h1{
+    color: #492f24;
+    text-align: center;
+    
+}
+p {
+    color:gray;
+    border: 1px solid gray;
+    padding: 10px;
+}
+ol {
+    border: 5px solid darksalmon;
+    border-radius: 10px;
+}
+/*this changes all list elements*/
+/*
+li {
+    color:#492f24;
+}*/ 
+
+/*We can do it to change the li within an ordered list*/
+ol li{
+    color:#492f24;
+}
+/*we can do it to where only the children of the content div ones*/
+/*
+.content li{
+    color: #492f24;
+}*/
+/*We can even do it so only the first child has a background color with a pseudoclass*/
+/*
+li:first-child{
+    background-color: #492f24;
+}*/
+/*or the nth child*/
+/*
+li:nth-child(2){
+    background-color: #492f24;
+}*/

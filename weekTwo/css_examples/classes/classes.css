@@ -1,0 +1,20 @@
+body {
+    background-color:#ffc425 ;
+    width: 800px;
+    margin: auto;
+}
+h1{
+    color: #492f24;
+    text-align: center;
+    
+}
+p.first {
+    color:#492f24;
+    border: 1px solid gray;
+    padding: 10px;
+}
+.second{
+    color: gray;
+    border: 1px solid #492f24;
+    padding: 10px;
+}
