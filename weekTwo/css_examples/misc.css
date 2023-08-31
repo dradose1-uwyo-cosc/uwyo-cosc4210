@@ -1,0 +1,48 @@
+.gradient-background {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to bottom, #ffc425, #492f24);
+  }
+  
+  /*border radius examples*/
+  .rounded-box {
+    width: 200px;
+    height: 200px;
+    background-color: #ffc425;
+    border-radius: 10px;
+  }
+  .rounded-box {
+    width: 200px;
+    height: 200px;
+    background-color: #ffc425;
+    border-radius: 10px 20px 30px 40px;
+  }
+
+  .circular {
+    width: 100px;
+    height: 100px;
+    background-color: l#ffc425;
+    border-radius: 50%;
+  }
+  
+  .rotate-example {
+    width: 100px;
+    height: 100px;
+    background-color: #ffc425;
+    transform: rotate(45deg);
+  }
+
+  .transition-example {
+    width: 200px;
+    height: 200px;
+    background-color: #ffc425;
+    transition: background-color 0.3s ease;
+  }
+  
+  .transition-example:hover {
+    background-color: #492f24;
+  }
+  
+  @media (max-width: 768px) {
+    /* CSS rules for screens up to 768px width */
+  }
