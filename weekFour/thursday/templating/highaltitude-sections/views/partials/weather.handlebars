@@ -1,0 +1,14 @@
+<div class ="weatherWidget">
+    {{log "test from hb"}}
+    {{log partials.weatherContext}}
+    {{#each partials.weatherContext}}
+    <div class ="location">
+        <h3>{{name}}</h3>
+        <a href="https://api.weather.gov/gridpoints/CYS/84,23/forecast">
+            <img src="{{icon}}" alt="{{shortForecast}}">
+            {{shortForecast}}, {{temperature}}
+        </a>
+        {{/each}}
+        <small>Source:<a href="https://www.weather.gov/documentation/services-web-api"></a>National Weather Service</small>
+    </div>
+</div>
