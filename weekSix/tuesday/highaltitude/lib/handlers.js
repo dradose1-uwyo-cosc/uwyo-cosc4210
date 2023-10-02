@@ -6,6 +6,7 @@ const song = require("./song")
 const weather = require("./middleware/weather")
 const fs = require('fs')
 const pathUtils = require('path')
+const db = require("../db")
 
 exports.api = {}
 
@@ -37,7 +38,7 @@ exports.api.vacationPhotoContest = async (req, res, fields, files) =>
 
 exports.home = async (req, res) =>
 {
-
+    //await weather.getWeatherData()
     res.render('home')
 } 
 
@@ -102,3 +103,33 @@ res.render('about', {song: song.getSong()})
 exports.notFound = (req, res) => res.render('404')
 exports.serverError = (err, req, res, next) => res.render('500')
 
+
+//add one to display vacations 
+exports.listVacations = async(req,res)=>
+{
+    const vacations = await db.getVacations({available: true})
+    const context = {
+        vacations: vacations.map(vacation => (
+            {
+                sku: vacation.sku,
+                name: vacation.name,
+                description: vacation.description, 
+                price: '$' + vacation.price.toFixed(2),
+                inSeason: vacation.inSeason,
+            }
+        ))
+    }
+    res.render('vacations', context)
+}
+
+//handle signing up for the notifications
+exports.notifyWhenInSeason = (req, res) =>
+res.render('notify-when-in-season',{sku:req.query.sku})
+
+exports.notifyWhenInSeasonProcess = async (req, res) =>
+{
+    console.log(req.body)
+    const {email, sku} = req.body
+    await db.addVacationInSeasonListener(email,sku)
+    return res.redirect(303,'/vacations')
+}
