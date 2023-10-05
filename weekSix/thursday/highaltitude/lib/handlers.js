@@ -133,24 +133,3 @@ exports.notifyWhenInSeasonProcess = async (req, res) =>
     await db.addVacationInSeasonListener(email,sku)
     return res.redirect(303,'/vacations')
 }
-
-//section for APIs
-
-//list all available vacations 
-exports.getVacationsAPI = async (req,res) =>
-{
-    const vacations = await db.getVacations({available:true})
-    res.json(vacations)
-}
-//get a vacation by its sku 
-exports.getVacationBySkuAPI = async (req, res) =>
-{
-    const vacation = await db.getVacationBySku(req.params.sku)
-    res.json(vacation)
-}
-//add a vacation in season listener 
-exports.addVacationInSeasonListenerAPI = async (req, res) =>
-{
-    await db.addVacationInSeasonListener(req.params.sku, req.body.email)
-    res.json({message:'success'})
-}

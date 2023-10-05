@@ -37,10 +37,6 @@ module.exports = {
             {$push: {skus:sku}},
             {upsert:true}
         )
-    },
-    getVacationBySku : async (sku) =>
-    {
-        return Vacation.find({sku:sku})
     }
 }
 

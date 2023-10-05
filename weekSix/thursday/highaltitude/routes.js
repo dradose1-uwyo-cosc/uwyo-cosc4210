@@ -48,13 +48,6 @@ module.exports = app =>
     app.get('/vacations', handlers.listVacations)
     app.get('/notify-me-when-in-season', handlers.notifyWhenInSeason)
     app.post('/notify-me-when-in-season', handlers.notifyWhenInSeasonProcess)
-
-    //API routes 
-    app.get('/api/vacations',handlers.getVacationsAPI)
-    app.get('api/vacation/:sku', handlers.getVacationBySkuAPI)
-    app.post('/api/vacation/:sku/notify-when-in-season',
-        handlers.addVacationInSeasonListenerAPI)
-
     // custom 404 page
     app.use(handlers.notFound)
         // custom 500 page
