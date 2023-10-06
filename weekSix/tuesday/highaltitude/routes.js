@@ -4,6 +4,7 @@
 
 //imports 
 const handlers = require('./lib/handlers') 
+const multiparty = require('multiparty')
 module.exports = app =>
 {
     //default path
@@ -23,10 +24,17 @@ module.exports = app =>
     //our route for the photo upload 
     app.post('/contest/vacation-photo/:year/:month', (req, res) =>
     {
+        console.log("processing form")
         const form = new multiparty.Form() 
+        console.log("after form creation")
         form.parse(req, (err, fields, files) =>
         {
-            if(err) return res.status(500).send({error: err.message})
+            if(err)
+            {
+                console.log(err)
+                return res.status(500).send({error: err.message})
+                
+            } 
             handlers.vacationPhotoContestProcess(req, res, fields, files)
         })
     })

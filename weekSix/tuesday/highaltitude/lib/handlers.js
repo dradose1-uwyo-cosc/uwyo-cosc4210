@@ -82,6 +82,7 @@ exports.vacationPhotoContest = (req, res) => {
   }
 exports.vacationPhotoContestProcess = async (req, res, fields, files) =>
 {
+
     console.log('field data: ', fields)
     console.log('files: ', files)
     const photo = files.photo[0]
