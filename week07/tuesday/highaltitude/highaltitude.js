@@ -13,7 +13,7 @@ const multiparty = require('multiparty')
 const routes = require("./routes")
 const cors = require('cors')
 
-const db = require("./db.js")
+//const db = require("./db.js")
 
 const song = require('./lib/song')
 
