@@ -11,8 +11,8 @@ let weatherCache = new Cache()
 //./lib/weather.js
 exports.getWeatherData = async (res) =>
 {
-
-    if (weatherCache.data == null || (Date.now() - weatherCache)>300000)
+    console.log((Date.now() - weatherCache.update))   
+    if (weatherCache.data == null || (Date.now() - weatherCache.update)>300000)
     {
         console.log("fetching new data")
         return fetch('https://api.weather.gov/gridpoints/CYS/84,23/forecast')
